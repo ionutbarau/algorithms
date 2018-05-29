@@ -1,6 +1,5 @@
-import java.util.Arrays;
-
 import com.learn.algorithms.search.BinarySearch;
+import com.learn.algorithms.search.JumpSearch;
 import com.learn.algorithms.search.LinearSearch;
 
 /**
@@ -16,6 +15,10 @@ public class AlgorithmsMain {
         System.out.println("X found through Linear Search at position : " + LinearSearch.doSearch(data,5));
         //2. Binary search
         System.out.println("X found through Linear Search at position : " + BinarySearch.doSearch(sortedData, 0,sortedData.length-1,5));
+        //3. Jump (block) search
+        System.out.println("X found through Linear Search at position : " + JumpSearch.doSearch(sortedData, 2));
+
+
 
     }
 }
