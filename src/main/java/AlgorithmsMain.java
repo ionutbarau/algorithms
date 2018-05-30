@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 import com.learn.algorithms.search.BinarySearch;
 import com.learn.algorithms.search.JumpSearch;
 import com.learn.algorithms.search.LinearSearch;
@@ -12,11 +14,14 @@ public class AlgorithmsMain {
 
     public static void main(String[] args){
         //1. Linear search
-        System.out.println("X found through Linear Search at position : " + LinearSearch.doSearch(data,5));
+        System.out.println("== Linear search ==");
+        Arrays.stream(data).forEach(x -> System.out.println("X = " + x +" found through Linear Search at position : " + LinearSearch.doSearch(data,x)));
         //2. Binary search
-        System.out.println("X found through Linear Search at position : " + BinarySearch.doSearch(sortedData, 0,sortedData.length-1,5));
+        System.out.println("== Binary search ==");
+        Arrays.stream(sortedData).forEach(x -> System.out.println("X = "+ x +" found through Binary Search at position : " + BinarySearch.doSearch(sortedData, 0,sortedData.length-1,x)));
         //3. Jump (block) search
-        System.out.println("X found through Linear Search at position : " + JumpSearch.doSearch(sortedData, 2));
+        System.out.println("== Jump search ==");
+        Arrays.stream(sortedData).forEach(x -> System.out.println("X = " + x +" found through Jump Search at position : " + JumpSearch.doSearch(sortedData, x)));
 
 
 
