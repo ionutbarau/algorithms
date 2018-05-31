@@ -46,39 +46,4 @@ public class JumpSearch {
         return -1;
     }
 
-    public static int doSearchWithFor(Integer[] data, int x){
-
-        //set the step as sqrt(length)
-        //get the block in which x should be present
-
-
-
-        int length = data.length;
-        int step = (int) Math.floor(Math.sqrt(length));
-        int prev = 0;
-
-        for(int i = 0; i <= length-1; i=i+step){
-            if(x > data[i]){
-                continue;
-            }
-
-            if(x < data[i]){
-                step = i;
-                prev = i-step;
-            }
-
-            if(x == data[i]){
-                return i;
-            }
-        }
-
-        for(int i = prev;i<=step;i++){
-            if(data[i] == x){
-                return i;
-            }
-        }
-
-
-        return -1;
-    }
 }
