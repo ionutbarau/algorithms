@@ -9,8 +9,8 @@ import com.learn.algorithms.search.LinearSearch;
  */
 public class AlgorithmsMain {
 
-    public static Integer[] data = new Integer[]{1,2,5,3,4,6,7,8,9,10};
-    public static Integer[] sortedData = new Integer[]{1,2,3,4,5,6,7,8,9,10};
+    public static Integer[] data = new Integer[]{14,11,22,33,67,34,70,99,250,101, 312};
+    public static Integer[] sortedData = new Integer[]{11,14,22,33,34,67,70,99,101,250};
 
     public static void main(String[] args){
         //1. Linear search
@@ -18,12 +18,14 @@ public class AlgorithmsMain {
         Arrays.stream(data).forEach(x -> System.out.println("X = " + x +" found through Linear Search at position : " + LinearSearch.doSearch(data,x)));
         //2. Binary search
         System.out.println("== Binary search ==");
-        Arrays.stream(sortedData).forEach(x -> System.out.println("X = "+ x +" found through Binary Search at position : " + BinarySearch.doSearch(sortedData, 0,sortedData.length-1,x)));
+        Arrays.stream(data).forEach(x -> System.out.println("X = "+ x +" found through Binary Search at position : " + BinarySearch.doSearch(sortedData, 0,sortedData.length-1,x)));
         //3. Jump (block) search
-        System.out.println("== Jump search ==");
-        Arrays.stream(sortedData).forEach(x -> System.out.println("X = " + x +" found through Jump Search at position : " + JumpSearch.doSearch(sortedData, x)));
-
-
+        System.out.println("== Jump search with while ==");
+        Arrays.stream(data).forEach(x -> System.out.println("X = " + x +" found through Jump Search (while) at position : " + JumpSearch.doSearchWithWhile(sortedData, x)));
+        System.out.println("== Jump search with for ==");
+        Arrays.stream(data).forEach(x -> System.out.println("X = " + x +" found through Jum Search (for) at position : " + JumpSearch.doSearchWithFor(sortedData, x)));
 
     }
+
+
 }
