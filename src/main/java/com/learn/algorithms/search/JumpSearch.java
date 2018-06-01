@@ -13,33 +13,36 @@ public class JumpSearch {
         int length = data.length;
         // Finding block size to be jumped
         int step = (int) Math.floor(Math.sqrt(length));
-        int prev = 0;
+        //set the lower end
+        int lower = 0;
 
         // Finding the block where element is
         // present (if it is present)
+        // while the element at (step or length)-1 is lower than x
+        // set the lower to be the step and double the step
         while(data[Math.min(step, length)-1] < x){
-            prev = step;
+            lower = step;
             step += (int) Math.floor(Math.sqrt(length));
-            if(prev >= length){
+            if(lower >= length){
                 return -1;
             }
         }
 
         // Doing a linear search for x in block
         // beginning with prev.
-        while (data[prev] < x){
-            prev++;
+        while (data[lower] < x){
+            lower++;
 
             // If we reached next block or end of
             // array, element is not present.
-            if(prev == Math.min(step, length)){
+            if(lower == Math.min(step, length)){
                 return -1;
             }
         }
 
         // If element is found
-        if(data[prev] == x){
-            return prev;
+        if(data[lower] == x){
+            return lower;
         }
 
 
