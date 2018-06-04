@@ -8,7 +8,7 @@ package com.learn.algorithms.search;
  */
 public class JumpSearch {
 
-    public static int doSearchWithWhile(Integer[] data, int x){
+    public static int doSearch(Integer[] data, int x){
 
         int length = data.length;
         // Finding block size to be jumped

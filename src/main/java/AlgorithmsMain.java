@@ -21,7 +21,7 @@ public class AlgorithmsMain {
         Arrays.stream(data).forEach(x -> System.out.println("X = "+ x +" found through Binary Search at position : " + BinarySearch.doSearch(sortedData, 0,sortedData.length-1,x)));
         //3. Jump (block) search
         System.out.println("== Jump search with while ==");
-        Arrays.stream(data).forEach(x -> System.out.println("X = " + x +" found through Jump Search (while) at position : " + JumpSearch.doSearchWithWhile(sortedData, x)));
+        Arrays.stream(data).forEach(x -> System.out.println("X = " + x +" found through Jump Search (while) at position : " + JumpSearch.doSearch(sortedData, x)));
     }
 
 
