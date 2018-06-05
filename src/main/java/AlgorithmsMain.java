@@ -1,6 +1,7 @@
 import java.util.Arrays;
 
 import com.learn.algorithms.search.BinarySearch;
+import com.learn.algorithms.search.InterpolationSearch;
 import com.learn.algorithms.search.JumpSearch;
 import com.learn.algorithms.search.LinearSearch;
 
@@ -20,8 +21,12 @@ public class AlgorithmsMain {
         System.out.println("== Binary search ==");
         Arrays.stream(data).forEach(x -> System.out.println("X = "+ x +" found through Binary Search at position : " + BinarySearch.doSearch(sortedData, 0,sortedData.length-1,x)));
         //3. Jump (block) search
-        System.out.println("== Jump search with while ==");
+        System.out.println("== Jump search ==");
         Arrays.stream(data).forEach(x -> System.out.println("X = " + x +" found through Jump Search (while) at position : " + JumpSearch.doSearch(sortedData, x)));
+
+        //4. Interpolation search
+        System.out.println("== Interpolation search ==");
+        Arrays.stream(data).forEach(x -> System.out.println("X = " + x +" found through Interpolation Search at position : " + InterpolationSearch.doSearch(sortedData, x)));
     }
 
 
