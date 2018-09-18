@@ -1,7 +1,5 @@
 package com.learn.algorithms.search;
 
-import java.util.Arrays;
-
 /**
  * In order to perform binary search the data should be sorted.
  * The search itself will get the middle element and compare with with "x".
