@@ -38,6 +38,7 @@ Time complexity is the number of steps taken for an algorithm to complete. It us
 Space (Memory) complexity is the amount of memory an algorithm uses
 Time complexity uses Big O notation.
 Time complexity (algorithm complexity) for f(n)=3n + 12 -> f(n)=n is the asymptomatic behavior noted as O(n).
+Time complexity is not always mathematically exact. It just gives you an idea.
 Rule of thumb: Programs with bigger O run slower than programs with smaller O
 
 Best to Worst
@@ -62,3 +63,51 @@ Basically the question is at what power should we raise number 2 in order to get
 Logarithm of a given number x is the exponent to which another fixed number, the base b, must be raised, to produce that number x
 
 log b (x) = y  if b^y = x
+
+
+-----------------------
+DATA STRUCTURES
+
+1. Arrays
+
+-uses a contiguous block in memory (elements are not scattered around the memory)
+-every element occupies the same amount of space in memory
+-arrays have each of their elements occupy the amount of memory needed for that data type.
+-array of objects store references not objects
+-if an array stats at memory address X, and the size of each element in the array is Y, we can calculate the memory address of
+the ith element by using the following expression : X + i * Y
+-if we know the index of an element , the time to retrieve the element will be the same, no matter where it is in an array.
+
+get by index is O(1)
+get when index is unknown is O(n) because we have to search the array, and in worst case we have to search the whole array
+add element toa full array is O(n) because we have to create a new array and copy all the items to the new array
+add element to the the end of array(has space) is O(1)
+insert or update element at specific index is O(1)
+delete an element by setting it to null is O(1) if we know the index, O(n) if we don't know the index
+delete an element by shifting elements is O(n)
+
+Essentially if we have to loop over the array we will have a O(n) time complexity, else it will be O(1)
+
+
+
+
+
+
+SORTING
+-------
+
+Unstable sort is a sort that will not preserve the order of elements that are equal
+Stable sort preservers the order of elelents that are equal
+Example:
+
+[1,3,4,5,4]
+
+If the first 4 will still be before the second 4 after a sort, than it is a stable sort. For numbers it does not matter,
+but for objects it might. If we do a sort within a sort, the second sort might break the whole sort if unstable. (ex: sort by name and than by age)
+
+[ (John, 20) , (Eric, 30), (John, 40) ]
+
+first sort is stable = [ (Eric, 30), (John, 20) , (John, 40) ]
+
+second sort is unstable (moves the elements even though they were sorted ok)
+and takes the result of the first sort = [ (Eric, 30), (John, 40), (John, 20)  ]
